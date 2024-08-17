@@ -15,7 +15,7 @@ export const CamperList = ({ campers }) => {
     <div className={css.camperListWrapper}>
       <div className={css.camperListOne}>
         {currentCampers.map((camper) => (
-          <CamperCard key={camper.id} camper={camper} />
+          <CamperCard key={camper._id} camper={camper} />
         ))}
       </div>
       {visibleCount < campers.length && (

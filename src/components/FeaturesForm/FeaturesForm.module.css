@@ -1,49 +1,90 @@
-.container {
-  width: 902px;
-  height: 532px;
+.featuresFormContainer {
   display: flex;
-  box-sizing: border-box;
-  margin-top: 44px;
+  align-items: flex-start;
+  gap: 24px;
+  padding-top: 44px;
+  width: 100%;
 }
 
-.infoSection {
+.featuresForm {
   width: 430px;
   height: 530px;
   display: flex;
   flex-direction: column;
-  padding-right: 24px;
   box-sizing: border-box;
 }
 
-.iconContainer {
-  width: 100%;
-  height: 60px;
+.iconsContainer {
+  width: 430px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  height: 200px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.detailItem {
   display: flex;
   align-items: center;
-  margin-bottom: 16px;
-  background-color: #f2f4f7; /* Додано фон для іконок */
-  border-radius: 100px; /* Закруглені краї */
-  padding: 12px 18px; /* Внутрішні відступи */
+  background-color: #f2f4f7;
+  border-radius: 100px;
+  padding: 12px 18px;
+  height: 44px;
+  font-size: 20px;
+  margin: 0;
   box-sizing: border-box;
 }
 
 .icon {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px; /* Відступ між іконкою та текстом */
+  margin-right: 8px;
 }
 
-.iconText {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 125%;
-  color: #101828;
-}
-
-.formSection {
+.vehicleDetails {
   width: 430px;
-  height: 532px;
+  margin-top: 44px;
+}
+
+.detailsTitle {
+  margin: 0 0 24px 0;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--main);
+}
+
+.detailsSection {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  border-top: 1px solid #dcdcdc;
+  padding-top: 24px;
+}
+
+.detailsSection p {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+}
+
+.detailsLabel {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 133%;
+  color: var(--main);
+}
+
+.detailsValue {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 133%;
+  text-align: center;
+  color: var(--main);
+}
+
+.registrationContainer {
+  width: 430px;
+  height: 530px;
 }

@@ -14,7 +14,7 @@
   border: none;
   cursor: pointer;
   margin: 0;
-  z-index: 2100; /* Забезпечує, що кнопка закриття завжди поверх модального контенту */
+  z-index: 2100;
 }
 
 .camperName {
@@ -33,6 +33,7 @@
   line-height: 150%;
   width: 267px;
   height: 24px;
+  margin-bottom: 16px;
 }
 
 .iconContainer {
@@ -98,25 +99,11 @@
   gap: 40px;
 }
 
-.buttonContainer::before {
-  content: "";
-  position: absolute;
-  bottom: 0; /* Розміщує лінію понизу контейнера кнопок */
-  left: 0;
-  height: 5px; /* Висота червоної лінії */
-  background-color: #e44848; /* Червоний колір */
-  width: 58px; /* Ширина лінії по змісту кнопок */
-  height: 5px;
-  z-index: -1; /* Залишає лінію під кнопками */
-  /* Встановлює ширину червоної лінії відповідно до кнопок */
-  padding: 0 10px; /* Додає трохи відступів з боків */
-}
-
 .buttonContainer::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -1px;
+  bottom: 0;
   height: 1px;
   background-color: rgba(16, 24, 40, 0.2);
   width: 100%;
@@ -130,7 +117,7 @@
   font-size: 20px;
   cursor: pointer;
   position: relative;
-  z-index: 1; /* Переконатися, що кнопки поверх лінії */
+  z-index: 1;
 }
 
 .infoButton:hover,
@@ -138,6 +125,13 @@
   background: transparent;
 }
 
-.selectedButton {
-  /* Якщо потрібно, можна додати стилі для виділених кнопок */
+.selectedButton::before {
+  content: "";
+  position: absolute;
+  bottom: -26px;
+  left: 0;
+  height: 5px;
+  background-color: #e44848;
+  width: 100%;
+  z-index: 2;
 }

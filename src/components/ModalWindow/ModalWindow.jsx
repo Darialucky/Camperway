@@ -9,7 +9,7 @@ import clsx from "clsx";
 ReactModal.setAppElement("#root");
 
 const ModalWindow = ({ isModalOpen, closeModal, camper }) => {
-  const [activeTab, setActiveTab] = useState("features"); // Стейт для відстеження активної вкладки
+  const [activeTab, setActiveTab] = useState("features");
 
   const customStyles = {
     content: {
@@ -101,9 +101,7 @@ const ModalWindow = ({ isModalOpen, closeModal, camper }) => {
             </button>
           </div>
           {activeTab === "features" ? (
-            // Закоментуйте або видаліть цей рядок, якщо не використовуєте featuresData
-            // <FeaturesForm features={featuresData} />
-            <div>Features data is not available</div>
+            <FeaturesForm camper={camper} />
           ) : (
             <ReviewsForm camper={camper} />
           )}
