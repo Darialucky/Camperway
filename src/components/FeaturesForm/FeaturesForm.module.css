@@ -1,0 +1,49 @@
+.container {
+  width: 902px;
+  height: 532px;
+  display: flex;
+  box-sizing: border-box;
+  margin-top: 44px;
+}
+
+.infoSection {
+  width: 430px;
+  height: 530px;
+  display: flex;
+  flex-direction: column;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+
+.iconContainer {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  background-color: #f2f4f7; /* Додано фон для іконок */
+  border-radius: 100px; /* Закруглені краї */
+  padding: 12px 18px; /* Внутрішні відступи */
+  box-sizing: border-box;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px; /* Відступ між іконкою та текстом */
+}
+
+.iconText {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: #101828;
+}
+
+.formSection {
+  width: 430px;
+  height: 532px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -2,15 +2,13 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  border: 1px solid rgba(16, 24, 40, 0.2);
+  border: 1px solid #ddd;
   border-radius: 20px;
   padding: 24px;
   width: 888px;
   height: 358px;
   margin-bottom: 32px;
-  border: 1px solid #ddd;
   background-color: #fff;
-  position: relative;
   box-sizing: border-box;
 }
 
@@ -54,17 +52,28 @@
   max-width: 60%;
 }
 
+.priceFavoriteContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .price {
   font-weight: 600;
   font-size: 24px;
   line-height: 125%;
-  font-weight: bold;
   color: #000;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 40%;
-  margin: 0 0 8px 0;
+  margin: 0;
+}
+
+.favoriteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 8px;
 }
 
 .ratingLocation {
@@ -73,16 +82,6 @@
   overflow: hidden;
   height: 24px;
   gap: 16px;
-}
-
-.ratingLocation span {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-  color: #101828;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .rating {
@@ -99,10 +98,10 @@
   height: 16px;
 }
 
-.reviews {
+.reviewText {
+  text-decoration: underline;
   margin-left: 4px;
-  color: #101828;
-  font-size: 12px;
+  text-underline-offset: 4px;
 }
 
 .details {
@@ -171,26 +170,4 @@
 
 .showMoreBtn:hover {
   background-color: #d84343;
-}
-
-.favoriteButton {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: transparent;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.favorite {
-  color: red;
-}
-
-.star {
-  text-decoration: none;
-}
-
-.reviewText {
-  text-decoration: underline;
 }

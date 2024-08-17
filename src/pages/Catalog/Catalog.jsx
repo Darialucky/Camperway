@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
 import { CamperList } from "../../components/CamperList/CamperList";
 import css from "./Catalog.module.css";

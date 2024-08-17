@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import css from "./CamperItem.module.css";
 import toast from "react-hot-toast";
 

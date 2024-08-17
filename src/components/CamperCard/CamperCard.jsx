@@ -1,8 +1,14 @@
-import React from "react";
+import { useState } from "react";
 import css from "./CamperCard.module.css";
-import Icon from "../Icon"; // Імпорт компонента Icon
+import Icon from "../Icon";
+import ModalWindow from "../ModalWindow/ModalWindow";
 
 const CamperCard = ({ camper }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   const reviewsCount = camper.reviews ? camper.reviews.length : 0;
 
   return (
@@ -19,7 +25,17 @@ const CamperCard = ({ camper }) => {
       <div className={css.textContent}>
         <div className={css.header}>
           <h3>{camper.name}</h3>
-          <p className={css.price}>€{camper.price}</p>
+          <div className={css.priceFavoriteContainer}>
+            <p className={css.price}>€{camper.price.toFixed(2)}</p>
+            <button className={css.favoriteButton}>
+              <Icon
+                name="icon-heart"
+                className={css.icon}
+                width={24}
+                height={24}
+              />
+            </button>
+          </div>
         </div>
         <div className={css.ratingLocation}>
           <div className={css.rating}>
@@ -91,7 +107,15 @@ const CamperCard = ({ camper }) => {
           </p>
         </div>
 
-        <button className={css.showMoreBtn}>Show more</button>
+        <button className={css.showMoreBtn} onClick={openModal}>
+          Show more
+        </button>
+
+        <ModalWindow
+          isModalOpen={isModalOpen}
+          closeModal={closeModal}
+          camper={camper}
+        />
       </div>
     </div>
   );

@@ -1,0 +1,87 @@
+.formContainer {
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+  padding: 24px;
+  width: 448px;
+  height: 532px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.formTitle {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--main);
+  margin: 0 0 8px 0;
+}
+
+.formSubtitle {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text);
+  margin: 0 0 24px 0;
+}
+
+.formInput {
+  gap: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputField {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 18px;
+  width: 400px;
+  box-sizing: border-box;
+  border: none;
+  background: #f7f7f7;
+}
+
+.nameField,
+.emailField,
+.dateField {
+  height: 56px;
+}
+
+.commentField {
+  height: 114px;
+  padding: 18px;
+  box-sizing: border-box;
+  resize: none; /* Запобігає прокрутці */
+}
+
+.submitButton {
+  border-radius: 200px;
+  padding: 16px 60px;
+  width: 160px;
+  height: 56px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: #fff;
+  background-color: #e44848;
+  border: none;
+  cursor: pointer;
+  margin-top: 24px;
+}
+
+.dateField::placeholder {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
