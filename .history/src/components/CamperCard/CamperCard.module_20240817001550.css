@@ -1,0 +1,21 @@
+.camperCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.showMoreBtn {
+  margin-top: auto; /* Опускає кнопку вниз */
+  padding: 12px 24px;
+  background-color: #e44848;
+  color: #ffffff;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}

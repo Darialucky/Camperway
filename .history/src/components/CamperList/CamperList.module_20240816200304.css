@@ -1,0 +1,46 @@
+.camperListOne {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.pagination button {
+  border: 1px solid rgba(71, 84, 103, 0.2);
+  border-radius: 200px;
+  padding: 16px 32px;
+  width: 145px;
+  height: 56px;
+  background-color: transparent; /* Залишаємо фон прозорим, якщо не потрібен */
+  color: #475463; /* Текстовий колір */
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  color: rgba(71, 84, 103, 0.5); /* Колір тексту для неактивної кнопки */
+  border-color: rgba(
+    71,
+    84,
+    103,
+    0.2
+  ); /* Колір бордюра для неактивної кнопки */
+}
+
+.pagination button:not(:disabled):hover {
+  background-color: rgba(71, 84, 103, 0.1); /* Легкий фон при наведенні */
+  border-color: rgba(
+    71,
+    84,
+    103,
+    0.5
+  ); /* Зміна кольору бордюра при наведенні */
+}

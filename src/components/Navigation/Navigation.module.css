@@ -1,0 +1,34 @@
+/* Navigation.module.css */
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #101828;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navigation a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #475467;
+  color: #f2f4f7;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navigation a:hover {
+  background-color: #ffc531;
+  color: #101828;
+}
+
+.navigation a.active {
+  background-color: #e44848;
+  color: #f2f4f7;
+}

@@ -1,0 +1,22 @@
+.closeModalBtn {
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeModalBtn svg {
+  width: 100%;
+  height: 100%;
+}
+
+.closeModalBtn svg path {
+  stroke: #121417;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
