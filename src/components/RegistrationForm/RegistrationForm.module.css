@@ -54,12 +54,19 @@
 .dateField {
   height: 56px;
 }
+.nameField,
+.commentField,
+.emailField,
+.dateField:focus {
+  outline: none;
+  box-shadow: none;
+}
 
 .commentField {
   height: 114px;
   padding: 18px;
   box-sizing: border-box;
-  resize: none; /* Запобігає прокрутці */
+  resize: none;
 }
 
 .submitButton {
@@ -79,9 +86,40 @@
   margin-top: 24px;
 }
 
-.dateField::placeholder {
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
+.dateWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 56px;
+  background: #f7f7f7;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+}
+
+.dateField {
+  height: 100%;
+  width: 100%;
+  border: none;
+  background: #f7f7f7;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.calendarIcon {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: var(--text);
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
 }
