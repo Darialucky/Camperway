@@ -20,7 +20,6 @@ export const Catalog = () => {
     dispatch(fetchCampers(1));
   }, [dispatch]);
 
-  if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error occurred!</p>;
 
   return (
