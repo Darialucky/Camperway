@@ -5,7 +5,6 @@ const initialState = {
   campers: [],
   favorite: [],
   page: 1,
-  selectedCamper: null,
   isLoadBtn: true,
   isLoading: false,
   isError: false,
@@ -25,16 +24,9 @@ const slice = createSlice({
       }
     },
     removeFromFavorite(state, action) {
-      const newFavorites = state.favorite.filter((item) => {
-        return item._id !== action.payload;
-      });
-      state.favorite = newFavorites;
-    },
-    addSelectedCamper(state, action) {
-      state.selectedCamper = action.payload;
-    },
-    removeSelectedCamper(state) {
-      state.selectedCamper = null;
+      state.favorite = state.favorite.filter(
+        (item) => item._id !== action.payload
+      );
     },
   },
   extraReducers: (builder) => {
@@ -62,12 +54,6 @@ const slice = createSlice({
   },
 });
 
-export const {
-  changePage,
-  addToFavorite,
-  removeFromFavorite,
-  addSelectedCamper,
-  removeSelectedCamper,
-} = slice.actions;
+export const { changePage, addToFavorite, removeFromFavorite } = slice.actions;
 
 export default slice.reducer;

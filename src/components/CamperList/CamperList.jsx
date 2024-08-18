@@ -8,6 +8,7 @@ import {
   selectFavoriteCampers,
 } from "../../redux/campers/selectors";
 import { fetchCampers } from "../../redux/campers/operations";
+import { changePage } from "../../redux/campers/slice";
 
 export const CamperList = ({ showFavorites = false }) => {
   const dispatch = useDispatch();
@@ -19,8 +20,14 @@ export const CamperList = ({ showFavorites = false }) => {
   const isLoadBtnVisible = useSelector(selectLoadBtn);
   const isFavoritesEmpty = showFavorites && campers.length === 0;
 
-  const handleLoadMore = () => {
-    dispatch(fetchCampers(page + 1));
+  const handleLoadMore = (e) => {
+    e.preventDefault();
+    dispatch(fetchCampers(page + 1))
+      .unwrap()
+      .then((response) => {
+        dispatch(changePage());
+      })
+      .catch((error) => {});
   };
 
   if (isFavoritesEmpty) {
@@ -43,7 +50,11 @@ export const CamperList = ({ showFavorites = false }) => {
         )}
       </div>
       {!showFavorites && campers.length > 0 && isLoadBtnVisible && (
-        <button onClick={handleLoadMore} className={css.loadMoreBtn}>
+        <button
+          type="button"
+          onClick={handleLoadMore}
+          className={css.loadMoreBtn}
+        >
           Load more
         </button>
       )}
