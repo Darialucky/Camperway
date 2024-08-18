@@ -1,10 +1,27 @@
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import { addToFavorite, removeFromFavorite } from "../../redux/campers/slice";
 import css from "./CamperCard.module.css";
 import Icon from "../Icon";
 import ModalWindow from "../ModalWindow/ModalWindow";
+import { selectFavoriteCampers } from "../../redux/campers/selectors";
 
 const CamperCard = ({ camper }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const dispatch = useDispatch();
+  const favoriteCampers = useSelector(selectFavoriteCampers);
+
+  const isFavorite = favoriteCampers
+    ? favoriteCampers.some((item) => item._id === camper._id)
+    : false;
+
+  const toggleFavorite = () => {
+    if (isFavorite) {
+      dispatch(removeFromFavorite(camper._id));
+    } else {
+      dispatch(addToFavorite(camper));
+    }
+  };
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -27,13 +44,20 @@ const CamperCard = ({ camper }) => {
           <h3>{camper.name}</h3>
           <div className={css.priceFavoriteContainer}>
             <p className={css.price}>€{camper.price.toFixed(2)}</p>
-            <button className={css.favoriteButton}>
-              <Icon
-                name="icon-heart"
-                className={css.icon}
-                width={24}
-                height={24}
-              />
+            <button
+              className={`${css.favoriteButton} ${
+                isFavorite ? css.favoriteActive : ""
+              }`}
+              onClick={toggleFavorite}
+            >
+              <span
+                style={{
+                  fontSize: "24px",
+                  color: isFavorite ? "#E44848" : "#e0e0e0",
+                }}
+              >
+                ♥
+              </span>
             </button>
           </div>
         </div>
@@ -106,11 +130,9 @@ const CamperCard = ({ camper }) => {
             AC
           </p>
         </div>
-
         <button className={css.showMoreBtn} onClick={openModal}>
           Show more
         </button>
-
         <ModalWindow
           isModalOpen={isModalOpen}
           closeModal={closeModal}

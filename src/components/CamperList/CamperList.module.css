@@ -1,18 +1,18 @@
 .camperListWrapper {
   display: flex;
-  flex-direction: column; /* Вертикальне вирівнювання елементів */
-  align-items: center; /* Центрує елементи по горизонталі */
+  flex-direction: column;
+  align-items: center;
 }
 
 .camperListOne {
   display: flex;
-  flex-direction: column; /* Переконайся, що всі картки йдуть вертикально */
-  align-items: center; /* Центрує картки по горизонталі */
+  flex-direction: column;
+  align-items: center;
 }
 
 .loadMoreBtn {
   display: block;
-  border-radius: 200px; /* Розгладжений край */
+  border-radius: 200px;
   cursor: pointer;
   border: 1px solid rgba(71, 84, 103, 0.2);
   padding: 16px 32px;
@@ -23,7 +23,7 @@
   line-height: 150%;
   letter-spacing: -0.01em;
   background-color: #fff;
-  margin-top: 20px; /* Додатковий відступ зверху */
+  margin-top: 20px;
 }
 
 .loadMoreBtn:hover {

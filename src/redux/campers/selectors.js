@@ -1,15 +1,13 @@
-export const selectCampers = (state) => state.rootReducer.campers.campers;
+export const selectCampers = (state) => state.campers.campers;
 
-export const selectFavoriteCampers = (state) =>
-  state.rootReducer.campers.favorite;
+export const selectFavoriteCampers = (state) => state.campers.favorite;
 
-export const selectPage = (state) => state.rootReducer.campers.page;
+export const selectPage = (state) => state.campers.page;
 
-export const selectLoadBtn = (state) => state.rootReducer.campers.isLoadBtn;
+export const selectLoadBtn = (state) => state.campers.isLoadBtn;
 
-export const selectedCamperForModal = (state) =>
-  state.rootReducer.campers.selectedCamper;
+export const selectedCamperForModal = (state) => state.campers.selectedCamper;
 
-export const selectLoading = (state) => state.rootReducer.campers.isLoading;
+export const selectLoading = (state) => state.campers.isLoading;
 
-export const selectError = (state) => state.rootReducer.campers.isError;
+export const selectError = (state) => state.campers.isError;

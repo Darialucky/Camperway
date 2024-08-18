@@ -10,9 +10,3 @@
   align-items: center;
   align-content: center;
 }
-
-@media (max-width: 1440px) {
-  .container {
-    padding: 50px 32px;
-  }
-}

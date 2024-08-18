@@ -1,4 +1,3 @@
-import React from "react";
 import css from "./Sidebar.module.css";
 import Icon from "../Icon";
 
@@ -81,13 +80,13 @@ const FilterButton = ({
   value,
   checked,
   onChange,
-  type,
+  type = "checkbox",
   name,
 }) => {
   return (
     <div className={css.filterButton}>
       <input
-        type={type || "checkbox"}
+        type={type}
         value={value}
         checked={checked}
         onChange={onChange}

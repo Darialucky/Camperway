@@ -1,13 +1,14 @@
 .sidebar {
   max-width: 366px;
   box-sizing: border-box;
-  margin: 20px 0 0 0;
+  margin: 20px 0;
 }
 
 .filters {
   display: flex;
   flex-direction: column;
 }
+
 .location {
   font-weight: 500;
   font-size: 16px;
@@ -27,8 +28,8 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
-  stroke: #475467;
-  margin: 0 0 14px 0;
+  color: #475467;
+  margin: 0 0 14px;
 }
 
 .filterSection {
@@ -49,7 +50,7 @@
 
 .inputWrapper input {
   width: 100%;
-  padding-left: 36px; /* Відступ для іконки */
+  padding-left: 36px;
   padding-right: 12px;
   height: 40px;
   border: none;
@@ -82,10 +83,10 @@
   border-radius: 10px;
   width: 115px;
   height: 95px;
-  background-color: #fff; /* Фон кнопки */
+  background-color: #fff;
   cursor: pointer;
   text-align: center;
-  transition: background-color 0.3s, border-color 0.3s; /* Анімація */
+  transition: background-color 0.3s, border-color 0.3s;
   box-sizing: border-box;
 }
 
@@ -96,12 +97,12 @@
 }
 
 .filterButton:hover {
-  background-color: var(--button-hover-bg); /* Колір фону при наведенні */
-  border-color: var(--button-hover-border); /* Колір рамки при наведенні */
+  background-color: var(--button-hover-bg);
+  border-color: var(--button-hover-border);
 }
 
 .filterButton span {
-  margin-top: 8px; /* Простір між іконкою та текстом */
+  margin-top: 8px;
   display: block;
 }
 
@@ -111,9 +112,9 @@
 
 .divider {
   border: none;
-  border-top: 1px solid #ccc; /* Сіра лінія */
-  width: 100%; /* Лінія на всю ширину контейнера */
-  margin: 24px 0; /* Відступи зверху та знизу */
+  border-top: 1px solid #ccc;
+  width: 100%;
+  margin: 24px 0;
 }
 
 .equipmentFilters,

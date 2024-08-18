@@ -33,7 +33,7 @@ export const Home = () => {
       </section>
 
       <section className={css.vehicles}>
-        <h2>Our Campers</h2>
+        <h2>OUR CAMPERS AND MORE</h2>
         <div className={css.vehicleCards}>
           <div className={css.vehicleCard}>
             <img src={Camper1} alt="Road Bear C 23-25" />

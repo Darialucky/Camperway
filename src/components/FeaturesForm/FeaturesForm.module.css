@@ -67,20 +67,12 @@
   margin: 6px 0;
 }
 
-.detailsLabel {
-  font-family: var(--font-family);
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 133%;
-  color: var(--main);
-}
-
+.detailsLabel,
 .detailsValue {
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 18px;
   line-height: 133%;
-  text-align: center;
   color: var(--main);
 }
 

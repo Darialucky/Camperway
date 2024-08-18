@@ -19,15 +19,16 @@ const slice = createSlice({
       state.page += 1;
     },
     addToFavorite(state, action) {
-      state.favorite = [...state.favorite, action.payload];
+      const camper = action.payload;
+      if (!state.favorite.some((item) => item._id === camper._id)) {
+        state.favorite.push(camper);
+      }
     },
     removeFromFavorite(state, action) {
-      const index = state.favorite.findIndex(
-        (item) => item._id === action.payload
-      );
-      if (index !== -1) {
-        state.favorite.splice(index, 1);
-      }
+      const newFavorites = state.favorite.filter((item) => {
+        return item._id !== action.payload;
+      });
+      state.favorite = newFavorites;
     },
     addSelectedCamper(state, action) {
       state.selectedCamper = action.payload;
@@ -69,4 +70,4 @@ export const {
   removeSelectedCamper,
 } = slice.actions;
 
-export const campersReducer = slice.reducer;
+export default slice.reducer;

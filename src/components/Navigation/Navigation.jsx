@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import css from "./Navigation.module.css";
 
@@ -8,7 +7,7 @@ export const Navigation = () => {
       <NavLink
         to="/"
         className={({ isActive }) => (isActive ? css.active : undefined)}
-        end // Додає `end` для точного збігу з кореневим шляхом
+        end
       >
         Home
       </NavLink>
