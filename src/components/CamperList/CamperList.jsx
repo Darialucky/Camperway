@@ -40,15 +40,17 @@ export const CamperList = ({ showFavorites = false }) => {
 
   return (
     <div className={css.camperListWrapper}>
-      <div className={css.camperListOne}>
+      <ul className={css.camperListOne}>
         {campers.length > 0 ? (
           campers.map((camper) => (
-            <CamperCard key={camper._id} camper={camper} />
+            <li key={camper._id}>
+              <CamperCard camper={camper} />
+            </li>
           ))
         ) : (
           <p>No campers available.</p>
         )}
-      </div>
+      </ul>
       {!showFavorites && campers.length > 0 && isLoadBtnVisible && (
         <button
           type="button"
