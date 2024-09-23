@@ -8,7 +8,8 @@ export const Sidebar = () => {
         <div className={css.filterLocation}>
           <h3 className={css.location}>Location</h3>
           <div className={css.inputWrapper}>
-            <span className={css.icon}>
+            <input type="text" placeholder="City" />
+            <span className={css.iconWrapper}>
               <Icon
                 name="icon-map-pin"
                 className={css.icon}
@@ -16,7 +17,6 @@ export const Sidebar = () => {
                 height={20}
               />
             </span>
-            <input type="text" placeholder="City" />
           </div>
         </div>
         <h4 className={css.filtersText}>Filters</h4>
