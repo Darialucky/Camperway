@@ -1,7 +1,29 @@
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setLocation,
+  setSelectedEquipment,
+  setVehicleType,
+} from "../../redux/filters/slice";
 import css from "./Sidebar.module.css";
 import Icon from "../Icon";
 
 export const Sidebar = () => {
+  const dispatch = useDispatch();
+  const equipmentFilters = ["AC", "Automatic", "Kitchen", "TV", "Shower/WC"];
+  const typeFilters = ["Van", "Fully Integrated", "Alcove"];
+
+  const handleLocationChange = (e) => {
+    dispatch(setLocation(e.target.value));
+  };
+
+  const handleEquipmentChange = (value) => {
+    dispatch(setSelectedEquipment(value));
+  };
+
+  const handleTypeChange = (value) => {
+    dispatch(setVehicleType(value));
+  };
+
   return (
     <aside className={css.sidebar}>
       <div className={css.filters}>
