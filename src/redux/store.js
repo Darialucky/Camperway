@@ -1,6 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import campersReducer from "./campers/slice";
-import filtersReducer from "./filters/slice";
+import { filterReducer } from "./filters/slice";
 
 import {
   persistStore,
@@ -23,7 +23,7 @@ const campersConfig = {
 
 const rootReducer = combineReducers({
   campers: persistReducer(campersConfig, campersReducer),
-  filters: filtersReducer,
+  filters: filterReducer,
 });
 
 export const store = configureStore({

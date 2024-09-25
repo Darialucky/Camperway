@@ -1,93 +1,42 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchFilteredCampers } from "./operation";
 
 const initialState = {
   location: "",
-  selectedEquipment: [],
-  selectedType: [],
-  filteredCampers: [],
-  isLoading: false,
-  isError: false,
+  equipment: [],
+  vehicleType: "",
 };
 
 const filtersSlice = createSlice({
   name: "filters",
   initialState,
   reducers: {
-    setLocation(state, action) {
+    setLocation: (state, action) => {
       state.location = action.payload;
     },
-    setSelectedEquipment(state, action) {
-      state.selectedEquipment = action.payload;
+    toggleEquipment: (state, action) => {
+      const isEquipmentSelected = state.equipment.includes(action.payload);
+      console.log(action.payload);
+      console.log(state.equipment);
+      if (isEquipmentSelected) {
+        state.equipment = state.equipment.filter(
+          (item) => item !== action.payload
+        );
+      } else {
+        state.equipment.push(action.payload);
+      }
     },
-    setVehicleType(state, action) {
-      state.selectedType = action.payload;
+    setVehicleType: (state, action) => {
+      state.vehicleType = action.payload;
     },
-    clearFilters(state) {
+    resetFilters: (state) => {
       state.location = "";
-      state.selectedEquipment = [];
-      state.selectedType = [];
+      state.equipment = [];
+      state.vehicleType = "";
     },
-  },
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchFilteredCampers.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(fetchFilteredCampers.fulfilled, (state, action) => {
-        state.filteredCampers = action.payload;
-        state.isLoading = false;
-      })
-      .addCase(fetchFilteredCampers.rejected, (state) => {
-        state.isLoading = false;
-        state.isError = true;
-      });
   },
 });
 
-export const {
-  setLocation,
-  setSelectedEquipment,
-  setVehicleType,
-  clearFilters,
-} = filtersSlice.actions;
+export const { setLocation, toggleEquipment, setVehicleType, resetFilters } =
+  filtersSlice.actions;
 
-export default filtersSlice.reducer;
-
-// import { createSlice } from "@reduxjs/toolkit";
-// import { filtersDataThunk } from "./operation";
-
-// const initialState = {
-//   filters: {
-//     location: "",
-//     selectedEquipment: [],
-//     selectedType: [],
-//   },
-//   allCampers: [],
-// };
-
-// const slice = createSlice({
-//   name: "filters",
-//   initialState,
-//   reducers: {
-//     setLocation(state, action) {
-//       state.filters.location = action.payload;
-//     },
-//     setSelectedEquipment(state, action) {
-//       state.filters.selectedEquipment = action.payload;
-//     },
-//     setVehicleType(state, action) {
-//       state.filters.selectedType = action.payload;
-//     },
-//   },
-//   extraReducers: (builder) => {
-//     builder.addCase(filtersDataThunk.fulfilled, (state, action) => {
-//       state.allCampers = action.payload;
-//     });
-//   },
-// });
-
-// export const { setLocation, setSelectedEquipment, setVehicleType } =
-//   slice.actions;
-
-// export const filtersSlice = slice.reducer;
+export const filterReducer = filtersSlice.reducer;

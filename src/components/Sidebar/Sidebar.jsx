@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
   setLocation,
-  setSelectedEquipment,
+  toggleEquipment,
   setVehicleType,
 } from "../../redux/filters/slice";
 import css from "./Sidebar.module.css";
@@ -9,28 +9,33 @@ import Icon from "../Icon";
 
 export const Sidebar = () => {
   const dispatch = useDispatch();
-  const equipmentFilters = ["AC", "Automatic", "Kitchen", "TV", "Shower/WC"];
-  const typeFilters = ["Van", "Fully Integrated", "Alcove"];
+  const filters = useSelector((state) => state.filters);
 
   const handleLocationChange = (e) => {
     dispatch(setLocation(e.target.value));
   };
 
-  const handleEquipmentChange = (value) => {
-    dispatch(setSelectedEquipment(value));
+  const handleEquipmentChange = (e) => {
+    dispatch(toggleEquipment(e.target.value));
+    console.log(e.target.value);
   };
 
-  const handleTypeChange = (value) => {
-    dispatch(setVehicleType(value));
+  const handleVehicleTypeChange = (e) => {
+    dispatch(setVehicleType(e.target.value));
   };
-
   return (
     <aside className={css.sidebar}>
       <div className={css.filters}>
         <div className={css.filterLocation}>
           <h3 className={css.location}>Location</h3>
           <div className={css.inputWrapper}>
-            <input type="text" placeholder="City" />
+            <input
+              type="text"
+              placeholder="City"
+              id="location"
+              value={filters.location}
+              onChange={handleLocationChange}
+            />
             <span className={css.iconWrapper}>
               <Icon
                 name="icon-map-pin"
@@ -42,6 +47,8 @@ export const Sidebar = () => {
           </div>
         </div>
         <h4 className={css.filtersText}>Filters</h4>
+
+        {/* Vehicle Equipment Section */}
         <div className={css.filterSection}>
           <h3 className={css.equipment}>Vehicle Equipment</h3>
           <hr className={css.divider} />
@@ -69,6 +76,7 @@ export const Sidebar = () => {
           </div>
         </div>
 
+        {/* Vehicle Type Section */}
         <div className={css.filterSection}>
           <h3 className={css.equipment}>Vehicle Type</h3>
           <hr className={css.divider} />
